@@ -42,16 +42,19 @@ public class MessageUtils {
 
 		// TODO - START
 		// decapsulate segment and put received payload data into a message
-		
 		byte count = 1;
 		byte datalength = segment[0];
 		byte[] data = new byte[datalength];
+
 
 		for (int i = 0; i < data.length; i++) {
 
 			data[i] = segment[count];
 			count++;
 		}
+
+
+		//System.arraycopy(segment, 1, data, 0, datalength);
 
 		message = new Message(data);
 		// TODO - END

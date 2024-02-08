@@ -11,10 +11,9 @@ public class Message {
 	public Message(byte[] data) {
 		
 		// TODO - START
-		if(data == null || data.length > 127){
+		if(data == null || data.length > 127)
+			throw new IllegalArgumentException("Data is null or over 128 bytes");
 
-			throw new UnsupportedOperationException(TODO.constructor("Message"));
-		}
 		this.data = data;
 		// TODO - END
 	}
