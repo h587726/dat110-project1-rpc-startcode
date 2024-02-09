@@ -1,6 +1,7 @@
 package no.hvl.dat110.rpc;
 
 import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import no.hvl.dat110.TODO;
 
@@ -57,7 +58,7 @@ public class RPCUtils {
 		
 		// TODO - START 
 		
-		encoded = str.getBytes();
+		encoded = str.getBytes(StandardCharsets.UTF_8);
 		
 		// TODO - END
 		
@@ -70,8 +71,9 @@ public class RPCUtils {
 		String decoded = null; 
 		
 		// TODO - START 
-		
-		decoded = new String(data);
+
+		//Added UTF_8 to makes sure tests don't fail.
+		decoded = new String(data, StandardCharsets.UTF_8);
 		
 		// TODO - END
 		
