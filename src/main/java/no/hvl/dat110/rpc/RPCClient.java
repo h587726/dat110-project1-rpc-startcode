@@ -21,8 +21,7 @@ public class RPCClient {
 		// TODO - START
 		// connect using the RPC client
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
+		connection = msgclient.connect();
 		
 		// TODO - END
 	}
@@ -32,14 +31,14 @@ public class RPCClient {
 		// TODO - START
 		// disconnect by closing the underlying messaging connection
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
+		connection.close();
 		
 		// TODO - END
 	}
 
 	/*
-	 Make a remote call om the method on the RPC server by sending an RPC request message and receive an RPC reply message
+	 Make a remote call on the method on the RPC server
+	 by sending an RPC request message and receive an RPC reply message
 
 	 rpcid is the identifier on the server side of the method to be called
 	 param is the marshalled parameter of the method to be called
@@ -58,9 +57,13 @@ public class RPCClient {
 		The return value from the RPC call must be decapsulated according to the RPC message format
 
 		*/
-				
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
+
+		returnval = RPCUtils.encapsulate(rpcid, param);
+		Message message = new Message(returnval);
+
+		connection.send(message);
+
+		returnval = RPCUtils.decapsulate(connection.receive().getData());
 		
 		// TODO - END
 		return returnval;
