@@ -84,8 +84,7 @@ public class RPCUtils {
 		
 		// TODO - START 
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
+		encoded = new byte[0];
 				
 		// TODO - END
 		
@@ -96,10 +95,7 @@ public class RPCUtils {
 	public static void unmarshallVoid(byte[] data) {
 		
 		// TODO
-		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
-		
+
 	}
 
 	// convert boolean to a byte array representation
@@ -121,7 +117,6 @@ public class RPCUtils {
 	public static boolean unmarshallBoolean(byte[] data) {
 		
 		return (data[0] > 0);
-		
 	}
 
 	// integer to byte array representation
@@ -131,8 +126,10 @@ public class RPCUtils {
 		
 		// TODO - START 
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
+		ByteBuffer byteBuffer = ByteBuffer.allocate(4);
+		byteBuffer.putInt(x);
+
+		encoded = byteBuffer.array();
 		
 		// TODO - END
 		
@@ -146,8 +143,8 @@ public class RPCUtils {
 		
 		// TODO - START 
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
+		ByteBuffer buffer = ByteBuffer.wrap(data);
+		decoded = buffer.getInt();
 		
 		// TODO - END
 		
