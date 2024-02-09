@@ -63,6 +63,7 @@ public class RPCClient {
 
 		connection.send(message);
 
+		//Added recievedata to end, tests run green.
 		returnval = RPCUtils.decapsulate(connection.receive().getData());
 		
 		// TODO - END
