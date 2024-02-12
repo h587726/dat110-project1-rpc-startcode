@@ -53,9 +53,6 @@ public class MessageUtils {
 			count++;
 		}
 
-
-		//System.arraycopy(segment, 1, data, 0, datalength);
-
 		message = new Message(data);
 		// TODO - END
 
